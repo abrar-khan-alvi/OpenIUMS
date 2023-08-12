@@ -1,0 +1,59 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DBF5F0"
+    app:circularflow_radiusInDP="50dp">
+
+    <EditText
+        android:id="@+id/login_username"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_x="33dp"
+        android:layout_y="350dp"
+        android:background="@drawable/radius"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="8dp"
+        android:hint="User Name"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_x="33dp"
+        android:layout_y="406dp"
+        android:background="@drawable/radius"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawablePadding="8dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_x="130dp"
+        android:layout_y="513dp"
+        android:backgroundTint="@color/Midnight_Blue"
+        android:text="Sign In"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:cornerRadius="50dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="435dp"
+        android:layout_height="wrap_content"
+        android:layout_x="-29dp"
+        android:layout_y="-15dp"
+        app:srcCompat="@drawable/ziyad" />
+
+</AbsoluteLayout>

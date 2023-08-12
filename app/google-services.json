@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "378511376838",
+    "firebase_url": "https://open-iums-aust-default-rtdb.firebaseio.com",
+    "project_id": "open-iums-aust",
+    "storage_bucket": "open-iums-aust.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378511376838:android:77de26c1aab836c4ad72c7",
+        "android_client_info": {
+          "package_name": "com.example.openiums2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378511376838-41alnjl4rtv7fecscba309pnchnpot41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAtjJSN8m7m3br1k8fubo6njBWcPRQh6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378511376838-41alnjl4rtv7fecscba309pnchnpot41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378511376838:android:00b9f2a1b4c95396ad72c7",
+        "android_client_info": {
+          "package_name": "com.example.openiumsaust"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378511376838-41alnjl4rtv7fecscba309pnchnpot41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAtjJSN8m7m3br1k8fubo6njBWcPRQh6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378511376838-41alnjl4rtv7fecscba309pnchnpot41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Navigation Drawer</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="job_success">Job Success</string>
+    <string name="ui_ux_designer">UI/UX Designer</string>
+    <string name="my_desc">Doing at the sweet spot between aesthetics and elegance to give life to your brand.My opinion belong to nobody but myself.</string>
+    <string name="about_me">About Me</string>
+    <string name="contact">Contact</string>
+    <string name="skills">Skills</string>
+    <string name="ratings">Star Ratings</string>
+    <string name="samplereview1">Occupation : Housewife                                                    ,                                                         Contact Number : 028190522</string>
+    <string name="samplereview2">Occupation : DGM,Bangladesh Bank                                                               Contact Number : 01912103966</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

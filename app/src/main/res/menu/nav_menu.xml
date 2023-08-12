@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_home"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/nav_profile"
+            android:title="Profile"/>
+        <item
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/nav_courses"
+            android:title="Courses"/>
+        <item
+            android:id="@+id/nav_result"
+            android:icon="@drawable/nav_result"
+            android:title="Result"/>
+        <item
+            android:id="@+id/nav_routine"
+            android:icon="@drawable/nav_routine"
+            android:title="Class Routine"/>
+        <item
+            android:id="@+id/nav_mat"
+            android:icon="@drawable/nav_mat"
+            android:title="Course Material"/>
+        <item
+            android:id="@+id/nav_advisor"
+            android:icon="@drawable/nav_adv"
+            android:title="Contact Advisor"/>
+        <item
+            android:id="@+id/nav_evaluation"
+            android:icon="@drawable/nav_eval"
+            android:title="Teacher Evaluation"/>
+        <item
+            android:id="@+id/nav_payments"
+            android:icon="@drawable/nav_pay"
+            android:title="Payments"/>
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/nav_help"
+            android:title="Help and Support"/>
+    </group>
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/nav_logout"
+                android:title="Logout"/>
+        </menu>
+    </item>
+</menu>
