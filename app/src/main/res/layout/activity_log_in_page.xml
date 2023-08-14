@@ -16,7 +16,7 @@
         android:background="@drawable/radius"
         android:drawableLeft="@drawable/baseline_person_24"
         android:drawablePadding="8dp"
-        android:hint="User Name"
+        android:hint="User ID"
         android:padding="8dp"
         android:textColor="@color/black" />
 
@@ -53,7 +53,7 @@
         android:layout_width="435dp"
         android:layout_height="wrap_content"
         android:layout_x="-29dp"
-        android:layout_y="-15dp"
+        android:layout_y="-13dp"
         app:srcCompat="@drawable/ziyad" />
 
 </AbsoluteLayout>

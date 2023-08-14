@@ -114,20 +114,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:id="@+id/profname"
                         android:fontFamily="@font/proximanovaregular"
-                        android:text="H.M. Ziyad"
+                        android:text="name"
                         android:textColor="#424242"
                         android:textSize="21sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/proximanovaregular"
-                        android:text=" Actual Student"
-                        android:textSize="14sp" />
-
-
                 </LinearLayout>
 
 
@@ -196,7 +188,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3.42"
+                                android:text="1.01"
+                                android:id="@+id/cgpa"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
@@ -334,6 +327,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
+                                android:id="@+id/birthday"
                                 android:paddingRight="8dp">
 
                                 <ImageView
@@ -347,8 +341,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
+                                    android:id="@+id/birth"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="18th August,2003"
+                                    android:text="200"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -500,6 +495,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
+                                android:id="@+id/usermail"
                                 android:textColor="@color/goodgrey"
                                 android:text="ziyad.cse.20210104023@aust.edu"
                                 android:textSize="15sp"
@@ -590,6 +586,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
+                                android:id="@+id/gender"
                                 android:text="Male"
                                 android:textSize="15sp"/>
                         </LinearLayout>
@@ -612,6 +609,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
+                                android:id="@+id/religion"
                                 android:text="Islam"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -699,6 +697,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
+                                    android:id="@+id/department"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="Department of Computer Science and Engineering"
                                     android:textColor="@color/goodgrey"
@@ -716,6 +715,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
+                                    android:id="@+id/degree"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="Bachelor of Science in Computer Science and Engineering"
                                     android:textColor="@color/goodgrey"
@@ -802,6 +802,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="Fall 22"
+                                    android:id="@+id/session"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -819,6 +820,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="2nd year 2nd Semester"
+                                    android:id="@+id/semester"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -903,6 +905,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="A"
+                                    android:id="@+id/sec"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -920,6 +923,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="A1"
+                                    android:id="@+id/group"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -993,6 +997,7 @@
                                 android:fontFamily="@font/proximanovaregular"
                                 android:maxLines="3"
                                 android:text="@string/samplereview2"
+                                android:id="@+id/fatherocp"
                                 android:textSize="14sp" />
 
                             <TextView
@@ -1000,7 +1005,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
                                 android:fontFamily="@font/proximanovaregular"
-                                android:text="Mohammed Mohiuddin Hawlader"
+                                android:text="xyzz"
+                                android:id="@+id/fathername"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -1048,6 +1054,7 @@
                                 android:layout_height="wrap_content"
                                 android:maxLines="3"
                                 android:text="@string/samplereview1"
+                                android:id="@+id/motherocp"
                                 android:textSize="14sp" />
 
                             <TextView

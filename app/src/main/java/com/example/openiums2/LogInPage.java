@@ -54,6 +54,7 @@ public class LogInPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!validateUsername() | !validatePassword()) {
+
                 } else {
                     checkUser();
                 }
@@ -107,10 +108,9 @@ public class LogInPage extends AppCompatActivity {
 
                     loginUsername.setError(null);
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
-
                     if (passwordFromDB.equals(userPassword)) {
                         loginUsername.setError(null);
-
+                        HelperClass.stringToPass=userUsername;
                         String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                         String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);

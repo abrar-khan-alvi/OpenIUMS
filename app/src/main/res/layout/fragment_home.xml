@@ -98,7 +98,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/proximanovaregular"
-                        android:text="H.M. Ziyad"
+                        android:text="name"
+                        android:id="@+id/username"
                         android:textColor="#424242"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -197,8 +198,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
+                                    android:id="@+id/studentid"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="20210104023"
+                                    android:text="0123456697"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -226,7 +228,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="CSE"
+                                    android:id="@+id/dept"
+                                    android:text="xyz"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -302,7 +305,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="2/2"
+                                android:text="101"
+                                android:id="@+id/yearsem"
                                 android:textSize="15sp"
                                 android:textColor="@color/goodgrey"
                                 android:fontFamily="@font/proximanovaregular" />
@@ -330,8 +334,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
+                                android:id="@+id/admit"
                                 android:textColor="@color/goodgrey"
-                                android:text="Spring 2021"
+                                android:text="xyz"
                                 android:textSize="15sp"
                                 android:fontFamily="@font/proximanovaregular" />
                         </LinearLayout>

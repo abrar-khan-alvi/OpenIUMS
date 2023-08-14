@@ -2,11 +2,19 @@ package com.example.openiums2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +30,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView username, userid, userdept, useryearsem, useradmit;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -54,10 +63,49 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    public void showuserdata() {
+        String userUsername = HelperClass.stringToPass; // receive a string from Login class
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String fullnameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
+                    String fullidFromDB = snapshot.child(userUsername).child("id").getValue(String.class);
+                    String deptFromDB = snapshot.child(userUsername).child("dept").getValue(String.class);
+                    String yearsemFromDB = snapshot.child(userUsername).child("yearsem").getValue(String.class);
+                    String admitFromDB = snapshot.child(userUsername).child("admit").getValue(String.class);
+
+                    username.setText(fullnameFromDB);
+                    userid.setText(fullidFromDB);
+                    userdept.setText(deptFromDB);
+                    useryearsem.setText(yearsemFromDB);
+                    useradmit.setText(admitFromDB);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        username = view.findViewById(R.id.username);
+        userid = view.findViewById(R.id.studentid);
+        userdept = view.findViewById(R.id.dept);
+        useryearsem = view.findViewById(R.id.yearsem);
+        useradmit = view.findViewById(R.id.admit);
+
+        showuserdata();
+
+        return view;
     }
 }

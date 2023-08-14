@@ -3,6 +3,7 @@ package com.example.openiums2;
 public class HelperClass {
 
     String name, email, username, password;
+    public static String stringToPass = " ";
 
     public String getName() {
         return name;
