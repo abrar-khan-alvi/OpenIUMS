@@ -72,14 +72,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+
                     String fullnameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
-                    String fullidFromDB = snapshot.child(userUsername).child("id").getValue(String.class);
+                    Long idFromDBLong = snapshot.child(userUsername).child("id").getValue(Long.class);
+                    String idFromDB = String.valueOf(idFromDBLong);
                     String deptFromDB = snapshot.child(userUsername).child("dept").getValue(String.class);
                     String yearsemFromDB = snapshot.child(userUsername).child("yearsem").getValue(String.class);
                     String admitFromDB = snapshot.child(userUsername).child("admit").getValue(String.class);
-
+                    String birthDB=snapshot.child(userUsername).child("birth").getValue(String.class);
                     username.setText(fullnameFromDB);
-                    userid.setText(fullidFromDB);
+                    //username.setText(HelperClass.stringToPass);
+                    userid.setText(idFromDB);
                     userdept.setText(deptFromDB);
                     useryearsem.setText(yearsemFromDB);
                     useradmit.setText(admitFromDB);

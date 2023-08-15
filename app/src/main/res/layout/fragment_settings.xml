@@ -153,6 +153,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="97%"
+                                android:id="@+id/coursecmp"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
@@ -327,7 +328,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
-                                android:id="@+id/birthday"
                                 android:paddingRight="8dp">
 
                                 <ImageView
@@ -338,10 +338,10 @@
                                     android:src="@drawable/birth" />
 
                                 <TextView
+                                    android:id="@+id/birth"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
-                                    android:id="@+id/birth"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:text="200"
                                     android:textColor="@color/goodgrey"
@@ -363,6 +363,7 @@
                                     android:src="@drawable/nid" />
 
                                 <TextView
+                                    android:id="@+id/studentid"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
@@ -472,6 +473,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:text="+91 7999193854"
+                                android:id="@+id/contact"
                                 android:textSize="15sp"
                                 android:textColor="@color/goodgrey"
                                 android:fontFamily="@font/proximanovaregular" />
@@ -587,7 +589,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/gender"
-                                android:text="Male"
+                                android:text=""
                                 android:textSize="15sp"/>
                         </LinearLayout>
 
@@ -610,7 +612,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/religion"
-                                android:text="Islam"
+                                android:text="xyzz"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -633,6 +635,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:text="O+"
+                                android:id="@+id/blood"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -1062,6 +1065,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
                                 android:text="Jebunnesa"
+                                android:id="@+id/mothername"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
                         </LinearLayout>

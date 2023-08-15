@@ -60,8 +60,8 @@ public class LogInPage extends AppCompatActivity {
                 }
             }
         });
-        loginUsername.setText("");
-        loginPassword.setText("");
+        //loginUsername.setText("");
+        //loginPassword.setText("");
     }
 
     public Boolean validateUsername() {
@@ -90,7 +90,8 @@ public class LogInPage extends AppCompatActivity {
     public void checkUser(){
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
-
+        System.out.println("Username: " + userUsername);
+        System.out.println("Password: " + userPassword);
         SharedPreferences sharepreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor=sharepreferences.edit();
         editor.putString("name","true");
@@ -107,10 +108,13 @@ public class LogInPage extends AppCompatActivity {
                 if (snapshot.exists()){
 
                     loginUsername.setError(null);
-                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                    Long passwordLong = snapshot.child(userUsername).child("password").getValue(Long.class);
+                    String passwordFromDB = String.valueOf(passwordLong);
                     if (passwordFromDB.equals(userPassword)) {
                         loginUsername.setError(null);
+
                         HelperClass.stringToPass=userUsername;
+
                         String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                         String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
