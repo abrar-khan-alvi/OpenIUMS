@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawerLayout;
     FirebaseAuth mAuth;
-    public static final String SHARED_PREFS="sharedprefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,10 +96,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mAuth.signOut();
             Intent intent = new Intent(MainActivity.this, LogInPage.class);
             startActivity(intent);
-            SharedPreferences sharepreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-            SharedPreferences.Editor editor=sharepreferences.edit();
-            editor.putString("name","");
-            editor.apply();
         }
 
 

@@ -2,18 +2,13 @@ package com.example.openiums2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.content.Context;
-import android.content.SharedPreferences;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,13 +16,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import java.util.Objects;
 
 public class LogInPage extends AppCompatActivity {
 
     private EditText loginUsername, loginPassword;
     Button loginButton;
-    public static final String SHARED_PREFS="sharedprefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +29,6 @@ public class LogInPage extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_log_in_page);
-
-        SharedPreferences sharepreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        String check=sharepreferences.getString("name","");
-        if(check.equals("true")){
-            Intent intent = new Intent(LogInPage.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-
-        }
 
         loginUsername = findViewById(R.id.login_username);
         loginPassword = findViewById(R.id.login_password);
@@ -60,8 +44,6 @@ public class LogInPage extends AppCompatActivity {
                 }
             }
         });
-        //loginUsername.setText("");
-        //loginPassword.setText("");
     }
 
     public Boolean validateUsername() {
@@ -86,30 +68,22 @@ public class LogInPage extends AppCompatActivity {
         }
     }
 
-
     public void checkUser(){
         String userUsername = loginUsername.getText().toString().trim();
         String userPassword = loginPassword.getText().toString().trim();
-        System.out.println("Username: " + userUsername);
-        System.out.println("Password: " + userPassword);
-        SharedPreferences sharepreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharepreferences.edit();
-        editor.putString("name","true");
-        editor.apply();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-
+            public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot.exists()){
-
                     loginUsername.setError(null);
-                    Long passwordLong = snapshot.child(userUsername).child("password").getValue(Long.class);
-                    String passwordFromDB = String.valueOf(passwordLong);
+                    Long idFromDBLong = snapshot.child(userUsername).child("id").getValue(Long.class);
+                    String idFromDB = String.valueOf(idFromDBLong);
+                    Long passwordFromDBLong = snapshot.child(userUsername).child("password").getValue(Long.class);
+                    String passwordFromDB=String.valueOf(passwordFromDBLong);
                     if (passwordFromDB.equals(userPassword)) {
                         loginUsername.setError(null);
 
@@ -138,7 +112,7 @@ public class LogInPage extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError error) {
 
             }
         });
