@@ -98,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/proximanovaregular"
-                        android:text="name"
+                        android:text=""
                         android:id="@+id/username"
                         android:textColor="#424242"
                         android:textSize="21sp"
@@ -200,7 +200,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:id="@+id/studentid"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="0123456697"
+                                    android:text=""
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -229,7 +229,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
                                     android:id="@+id/dept"
-                                    android:text="xyz"
+                                    android:text=""
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -305,7 +305,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="101"
+                                android:text=""
                                 android:id="@+id/yearsem"
                                 android:textSize="15sp"
                                 android:textColor="@color/goodgrey"
@@ -336,7 +336,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/admit"
                                 android:textColor="@color/goodgrey"
-                                android:text="xyz"
+                                android:text=""
                                 android:textSize="15sp"
                                 android:fontFamily="@font/proximanovaregular" />
                         </LinearLayout>

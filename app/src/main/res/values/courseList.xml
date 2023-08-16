@@ -1,0 +1,161 @@
+<resources>
+
+    <!-- Course Data -->
+    <string-array name="course_numbers">
+        <item>HUM1107</item>
+        <item>HUM1108</item>
+        <item>MATH1115</item>
+        <item>PHY1115</item>
+        <item>PHY1116</item>
+        <item>CHEM1115</item>
+        <item>CSE1101</item>
+        <item>CSE1102</item>
+        <item>CSE1108</item>
+        <item>MATH1219</item>
+        <item>ME1211</item>
+        <item>ME1214</item>
+        <item>EEE1241</item>
+        <item>EEE1242</item>
+        <item>CSE1200</item>
+        <item>CSE1203</item>
+        <item>CSE1205</item>
+        <item>CSE1206</item>
+        <item>HUM2109</item>
+        <item>MATH2101</item>
+        <item>EEE2141</item>
+        <item>EEE2142</item>
+        <item>CSE2100</item>
+        <item>CSE2103</item>
+        <item>CSE2104</item>
+        <item>CSE2105</item>
+        <item>CSE2106</item>
+        <item>MATH2203</item>
+    </string-array>
+
+    <string-array name="course_titles">
+        <item>Critical Thinking and Communication</item>
+        <item>English Language Sessional</item>
+        <item>Mathematics-I</item>
+        <item>Physics</item>
+        <item>Physics Lab</item>
+        <item>Chemistry</item>
+        <item>Elementary Structured Programming</item>
+        <item>Elementary Structured Programming Lab</item>
+        <item>Introduction to Computer Systems</item>
+        <item>Mathematics-II</item>
+        <item>Basic Mechanical Engineering</item>
+        <item>Engineering Drawing</item>
+        <item>Basic Electrical Engineering</item>
+        <item>Basic Electrical Engineering Lab</item>
+        <item>Software Development-I</item>
+        <item>Discrete Mathematics</item>
+        <item>Object Oriented Programming</item>
+        <item>Object Oriented Programming Lab</item>
+        <item>Society, Ethics and Technology</item>
+        <item>Mathematics-III</item>
+        <item>Electronic Devices and Circuits</item>
+        <item>Electronic Devices and Circuits Lab</item>
+        <item>Software Development-II</item>
+        <item>Data Structures</item>
+        <item>Data Structures Lab</item>
+        <item>Digital Logic Design</item>
+        <item>Digital Logic Design Lab</item>
+        <item>Mathematics- IV</item>
+    </string-array>
+
+    <string-array name="hours_per_week">
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>3-0</item>
+        <item>3-0</item>
+        <item>0-3/2</item>
+        <item>3-0</item>
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>0-3</item>
+        <item>3-0</item>
+        <item>3-0</item>
+        <item>0-3/2</item>
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>0-3</item>
+        <item>3-0</item>
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>3-0</item>
+        <item>3-0</item>
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>0-3/2</item>
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>3-0</item>
+        <item>0-3</item>
+        <item>3-0</item>
+        <item>3-0</item>
+    </string-array>
+
+    <string-array name="credits">
+        <item>3</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>3</item>
+        <item>0.75</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>3</item>
+        <item>0.75</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>0.75</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>1.5</item>
+        <item>3</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="prerequisites">
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>MATH1115</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>CSE1101</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>MATH1219</item>
+        <item>EEE1241</item>
+        <item>N/A</item>
+        <item>N/A</item>
+        <item>CSE1101</item>
+        <item>N/A</item>
+        <item>CSE1101</item>
+        <item>N/A</item>
+        <item>MATH2101</item>
+    </string-array>
+
+</resources>

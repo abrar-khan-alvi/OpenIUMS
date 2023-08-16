@@ -11,8 +11,8 @@
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_x="33dp"
-        android:layout_y="350dp"
+        android:layout_x="35dp"
+        android:layout_y="348dp"
         android:background="@drawable/radius"
         android:drawableLeft="@drawable/baseline_person_24"
         android:drawablePadding="8dp"
@@ -25,8 +25,8 @@
         android:layout_width="312dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_x="33dp"
-        android:layout_y="406dp"
+        android:layout_x="36dp"
+        android:layout_y="403dp"
         android:background="@drawable/radius"
         android:drawableLeft="@drawable/baseline_lock_24"
         android:drawablePadding="8dp"
@@ -40,8 +40,8 @@
         android:layout_width="122dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_x="130dp"
-        android:layout_y="513dp"
+        android:layout_x="140dp"
+        android:layout_y="480dp"
         android:backgroundTint="@color/Midnight_Blue"
         android:text="Sign In"
         android:textColor="@color/white"
@@ -50,10 +50,10 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="435dp"
-        android:layout_height="wrap_content"
-        android:layout_x="-29dp"
-        android:layout_y="-13dp"
-        app:srcCompat="@drawable/ziyad" />
+        android:layout_width="257dp"
+        android:layout_height="239dp"
+        android:layout_x="66dp"
+        android:layout_y="80dp"
+        app:srcCompat="@drawable/logo" />
 
 </AbsoluteLayout>

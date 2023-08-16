@@ -9,7 +9,5 @@
     <string name="contact">Contact</string>
     <string name="skills">Skills</string>
     <string name="ratings">Star Ratings</string>
-    <string name="samplereview1">Occupation : Housewife                                                    ,                                                         Contact Number : 028190522</string>
-    <string name="samplereview2">Occupation : DGM,Bangladesh Bank                                                               Contact Number : 01912103966</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

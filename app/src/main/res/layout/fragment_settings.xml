@@ -116,7 +116,7 @@
                         android:layout_marginTop="10dp"
                         android:id="@+id/profname"
                         android:fontFamily="@font/proximanovaregular"
-                        android:text="name"
+                        android:text=""
                         android:textColor="#424242"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -152,7 +152,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="97%"
+                                android:text=""
                                 android:id="@+id/coursecmp"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -189,7 +189,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1.01"
+                                android:text=""
                                 android:id="@+id/cgpa"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -299,7 +299,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/proximanovaregular"
-                                android:text="@string/about_me"
+                                android:text="About Me"
                                 android:textSize="17sp"
                                 android:textStyle="bold" />
 
@@ -343,7 +343,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="200"
+                                    android:text=""
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -368,7 +368,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="87325482653786253"
+                                    android:text=""
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -430,7 +430,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/contact"
+                            android:text="Contact"
                             android:textSize="17sp"
                             android:fontFamily="@font/proximanovaregular"
                             android:textStyle="bold" />
@@ -472,7 +472,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="+91 7999193854"
+                                android:text=""
                                 android:id="@+id/contact"
                                 android:textSize="15sp"
                                 android:textColor="@color/goodgrey"
@@ -499,7 +499,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/usermail"
                                 android:textColor="@color/goodgrey"
-                                android:text="ziyad.cse.20210104023@aust.edu"
+                                android:text=""
                                 android:textSize="15sp"
                                 android:fontFamily="@font/proximanovaregular" />
                         </LinearLayout>
@@ -612,7 +612,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/religion"
-                                android:text="xyzz"
+                                android:text=""
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -634,7 +634,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="O+"
+                                android:text=""
                                 android:id="@+id/blood"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -702,7 +702,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:id="@+id/department"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="Department of Computer Science and Engineering"
+                                    android:text=""
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -720,7 +720,7 @@
                                     android:layout_marginLeft="20dp"
                                     android:id="@+id/degree"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="Bachelor of Science in Computer Science and Engineering"
+                                    android:text=""
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
                             </LinearLayout>
@@ -804,7 +804,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="Fall 22"
+                                    android:text=""
                                     android:id="@+id/session"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
@@ -822,7 +822,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="2nd year 2nd Semester"
+                                    android:text=""
                                     android:id="@+id/semester"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
@@ -907,7 +907,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="A"
+                                    android:text=""
                                     android:id="@+id/sec"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
@@ -925,7 +925,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="@font/proximanovaregular"
-                                    android:text="A1"
+                                    android:text=""
                                     android:id="@+id/group"
                                     android:textColor="@color/goodgrey"
                                     android:textSize="15sp" />
@@ -999,7 +999,6 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/proximanovaregular"
                                 android:maxLines="3"
-                                android:text="@string/samplereview2"
                                 android:id="@+id/fatherocp"
                                 android:textSize="14sp" />
 
@@ -1008,7 +1007,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
                                 android:fontFamily="@font/proximanovaregular"
-                                android:text="xyzz"
+                                android:text=""
                                 android:id="@+id/fathername"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -1056,7 +1055,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:maxLines="3"
-                                android:text="@string/samplereview1"
                                 android:id="@+id/motherocp"
                                 android:textSize="14sp" />
 
@@ -1064,7 +1062,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
-                                android:text="Jebunnesa"
+                                android:text=""
                                 android:id="@+id/mothername"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />

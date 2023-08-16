@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- Data Rows -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/courseNumberTextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Course Number"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/courseTitleTextView"
+            android:layout_width="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Course Title"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/hoursPerWeekTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:text="Hours/Week"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/creditsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:text="Credits"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/prerequisiteTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:gravity="start"
+            android:text="Prerequisite" />
+    </LinearLayout>
+
+</LinearLayout>

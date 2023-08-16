@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="HeaderTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item> <!-- Adjust the text size as needed -->
+    </style>
+
+    <style name="DataTextStyle">
+        <item name="android:textSize">14sp</item> <!-- Adjust the text size as needed -->
+    </style>
+
+</resources>

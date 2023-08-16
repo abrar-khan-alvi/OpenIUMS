@@ -3,10 +3,15 @@ package com.example.openiums2;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +64,22 @@ public class ShareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_share, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_share, container, false);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
+
+        List<String> courseNumbers = Arrays.asList(getResources().getStringArray(R.array.course_numbers));
+        List<String> courseTitles = Arrays.asList(getResources().getStringArray(R.array.course_titles));
+        List<String> hoursPerWeek = Arrays.asList(getResources().getStringArray(R.array.hours_per_week));
+        List<String> credits = Arrays.asList(getResources().getStringArray(R.array.credits));
+        List<String> prerequisites = Arrays.asList(getResources().getStringArray(R.array.prerequisites));
+
+        CourseAdapter adapter = new CourseAdapter(courseNumbers, courseTitles, hoursPerWeek, credits, prerequisites);
+        recyclerView.setAdapter(adapter);
+
+// Set layout manager
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        return rootView;
+
     }
 }
