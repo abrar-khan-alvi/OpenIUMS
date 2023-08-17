@@ -14,15 +14,21 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     private List<String> hoursPerWeekList;
     private List<String> creditsList;
     private List<String> prerequisitesList;
+    private OnItemClickListener itemClickListener;
 
     public CourseAdapter(List<String> courseNumbers, List<String> courseTitles,
                          List<String> hoursPerWeekList, List<String> creditsList,
-                         List<String> prerequisitesList) {
+                         List<String> prerequisitesList, OnItemClickListener listener) {
         this.courseNumbers = courseNumbers;
         this.courseTitles = courseTitles;
         this.hoursPerWeekList = hoursPerWeekList;
         this.creditsList = creditsList;
         this.prerequisitesList = prerequisitesList;
+        this.itemClickListener = listener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 
     @NonNull
@@ -36,28 +42,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         if (position == 0) {
-            // Display header content in bold and larger size
-            holder.courseNumberTextView.setTextAppearance(R.style.HeaderTextStyle);
-            holder.courseNumberTextView.setText("Course no.");
-
-            holder.courseTitleTextView.setTextAppearance(R.style.HeaderTextStyle);
-            holder.courseTitleTextView.setText("Course Title");
-
-            holder.hoursPerWeekTextView.setTextAppearance(R.style.HeaderTextStyle);
-            holder.hoursPerWeekTextView.setText("Hours/Week");
-
-            holder.creditsTextView.setTextAppearance(R.style.HeaderTextStyle);
-            holder.creditsTextView.setText("Credits");
-
-            holder.prerequisiteTextView.setTextAppearance(R.style.HeaderTextStyle);
-            holder.prerequisiteTextView.setText("Prerequisite");
+            // Display header content (if needed)
         } else {
+            final int dataIndex = position - 1; // Adjust index for data lists
+
             // Display course data
-            String courseNumber = courseNumbers.get(position - 1);
-            String courseTitle = courseTitles.get(position - 1);
-            String hoursPerWeek = hoursPerWeekList.get(position - 1);
-            String credits = creditsList.get(position - 1);
-            String prerequisite = prerequisitesList.get(position - 1);
+            String courseNumber = courseNumbers.get(dataIndex);
+            String courseTitle = courseTitles.get(dataIndex);
+            String hoursPerWeek = hoursPerWeekList.get(dataIndex);
+            String credits = creditsList.get(dataIndex);
+            String prerequisite = prerequisitesList.get(dataIndex);
 
             holder.courseNumberTextView.setTextAppearance(R.style.DataTextStyle);
             holder.courseNumberTextView.setText(courseNumber);
@@ -73,8 +67,18 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
             holder.prerequisiteTextView.setTextAppearance(R.style.DataTextStyle);
             holder.prerequisiteTextView.setText(prerequisite);
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (itemClickListener != null) {
+                        itemClickListener.onItemClick(dataIndex);
+                    }
+                }
+            });
         }
     }
+
 
     @Override
     public int getItemCount() {

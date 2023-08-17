@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/courseNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course No:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/courseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Title:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/hoursPerWeekTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hours/Week:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/creditsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/prerequisitesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prerequisite:"
+        android:textStyle="bold" />
+</LinearLayout>
