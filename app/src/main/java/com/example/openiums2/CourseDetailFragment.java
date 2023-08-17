@@ -2,12 +2,19 @@ package com.example.openiums2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,6 +88,30 @@ public class CourseDetailFragment extends Fragment {
             hoursPerWeekTextView.setText(hoursPerWeek);
             creditsTextView.setText(credits);
             prerequisitesTextView.setText(prerequisites);
+
+            Button addToFirebaseButton = rootView.findViewById(R.id.addToFirebaseButton);
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("courses");
+            addToFirebaseButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Course course = new Course(courseNumber,courseTitle,hoursPerWeek,credits,prerequisites); // You might want to store the course title only
+
+                    // Push the course data to Firebase Database under the user's node
+                    databaseReference.child(HelperClass.stringToPass).child(courseNumber).setValue(course)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        // Show a success message
+                                        Toast.makeText(getActivity(), "Course added successfully", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        // Show an error message
+                                        Toast.makeText(getActivity(), "Failed to add course", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                }
+            });
         }
 
         return rootView;
