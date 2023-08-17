@@ -26,7 +26,7 @@
         <item
             android:id="@+id/nav_routine"
             android:icon="@drawable/nav_routine"
-            android:title="Class Routine"/>
+            android:title="My Courses"/>
         <item
             android:id="@+id/nav_mat"
             android:icon="@drawable/nav_mat"

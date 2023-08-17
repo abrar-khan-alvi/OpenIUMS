@@ -1,12 +1,25 @@
+<!-- fragment_routine.xml -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!-- Other views or layout elements can be added here -->
 
+    <TextView
+        android:id="@+id/courseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="vertical"
+        android:maxLines="100"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:hint="Loading course data..." />
 </LinearLayout>

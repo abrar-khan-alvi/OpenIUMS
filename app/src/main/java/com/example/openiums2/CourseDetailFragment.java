@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -104,6 +105,8 @@ public class CourseDetailFragment extends Fragment {
                                     if (task.isSuccessful()) {
                                         // Show a success message
                                         Toast.makeText(getActivity(), "Course added successfully", Toast.LENGTH_SHORT).show();
+                                        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                                        fragmentManager.popBackStack();
                                     } else {
                                         // Show an error message
                                         Toast.makeText(getActivity(), "Failed to add course", Toast.LENGTH_SHORT).show();

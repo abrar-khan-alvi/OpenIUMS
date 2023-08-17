@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,16 +73,39 @@ public class RoutineFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_routine, container, false);
 
-        WebView webView = view.findViewById(R.id.webView);
-        webView.setWebViewClient(new WebViewClient());
+        DatabaseReference userCoursesRef = FirebaseDatabase.getInstance().getReference("courses")
+                .child(HelperClass.stringToPass);
 
-        // Replace "https://www.example.com" with the URL you want to open
-        String urlToOpen = "google.com";
+        userCoursesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Clear the existing courseTextView content
+                TextView courseTextView = view.findViewById(R.id.courseTextView);
+                courseTextView.setText("");
 
-        webView.loadUrl(urlToOpen);
+                for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()) {
+                    Course course = courseSnapshot.getValue(Course.class);
+
+                    if (course != null) {
+                        String courseInfo = "Course Number: " + course.getCourseNumber() + "\n"
+                                + "Course Title: " + course.getCourseTitle() + "\n"
+                                + "Hours Per Week: " + course.getHoursPerWeek() + "\n"
+                                + "Credits: " + course.getCredits() + "\n"
+                                + "Prerequisites: " + course.getPrerequisites() + "\n\n";
+
+                        courseTextView.append(courseInfo);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle the error
+                Toast.makeText(getActivity(), "Failed to retrieve courses", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
-
     }
 
 }
