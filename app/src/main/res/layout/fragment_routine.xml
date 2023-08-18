@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Add this TextView for displaying total credits -->
+    <TextView
+        android:id="@+id/totalCreditsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/black" />
+
     <!-- Other views or layout elements can be added here -->
 
     <TextView

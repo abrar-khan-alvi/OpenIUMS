@@ -37,6 +37,8 @@ public class RoutineFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private int totalCredits = 0;
+
     public RoutineFragment() {
         // Required empty public constructor
     }
@@ -83,6 +85,7 @@ public class RoutineFragment extends Fragment {
                 // Clear the existing courseTextView content
                 TextView courseTextView = view.findViewById(R.id.courseTextView);
                 courseTextView.setText("");
+                totalCredits = 0;
                 System.out.println(dataSnapshot.toString());
                 for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()) {
                     Course course = courseSnapshot.getValue(Course.class);
@@ -95,6 +98,13 @@ public class RoutineFragment extends Fragment {
                                 + "Prerequisites: " + course.getPrerequisites() + "\n\n";
 
                         courseTextView.append(courseInfo);
+                        try {
+                            int courseCredits = Integer.parseInt(course.getCredits());
+                            totalCredits += courseCredits;
+                        } catch (NumberFormatException e) {
+                            // Handle the case where credit value is not a valid integer
+                            // You might want to log or display an error message
+                        }
                        // System.out.println("Course Number: " + course.getCourseNumber());
                         //System.out.println("Course Title: " + course.getCourseTitle());
                         //System.out.println("Hours Per Week: " + course.getHoursPerWeek());
@@ -102,12 +112,18 @@ public class RoutineFragment extends Fragment {
                        // System.out.println("Prerequisites: " + course.getPrerequisites());
                     }
                 }
+                TextView totalCreditsTextView = view.findViewById(R.id.totalCreditsTextView);
+                totalCreditsTextView.setText("Total Credits: " + totalCredits);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Handle the error
                 Toast.makeText(getActivity(), "Failed to retrieve courses", Toast.LENGTH_SHORT).show();
+
+                // Update the total credits TextView on error
+                TextView totalCreditsTextView = view.findViewById(R.id.totalCreditsTextView);
+                totalCreditsTextView.setText("Total Credits: 0");
             }
         });
 
