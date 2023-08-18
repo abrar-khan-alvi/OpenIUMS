@@ -26,15 +26,17 @@ public class Course {
     public String getCourseTitle() {
         return courseTitle;
     }
+
+    public String getHoursPerWeek() {
+        return hoursPerWeek;
+    }
+
     public String getCredits() {
-        return courseNumber;
+        return credits;
     }
 
     public String getPrerequisites() {
-        return courseTitle;
+        return prerequisites;
     }
-    public String getHoursPerWeek() {
-        return courseNumber;
-    }
-
 }
+

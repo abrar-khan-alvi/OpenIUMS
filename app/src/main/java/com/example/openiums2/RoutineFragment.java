@@ -66,6 +66,7 @@ public class RoutineFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -82,7 +83,7 @@ public class RoutineFragment extends Fragment {
                 // Clear the existing courseTextView content
                 TextView courseTextView = view.findViewById(R.id.courseTextView);
                 courseTextView.setText("");
-
+                System.out.println(dataSnapshot.toString());
                 for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()) {
                     Course course = courseSnapshot.getValue(Course.class);
 
@@ -94,6 +95,11 @@ public class RoutineFragment extends Fragment {
                                 + "Prerequisites: " + course.getPrerequisites() + "\n\n";
 
                         courseTextView.append(courseInfo);
+                       // System.out.println("Course Number: " + course.getCourseNumber());
+                        //System.out.println("Course Title: " + course.getCourseTitle());
+                        //System.out.println("Hours Per Week: " + course.getHoursPerWeek());
+                        //System.out.println("Credits: " + course.getCredits());
+                       // System.out.println("Prerequisites: " + course.getPrerequisites());
                     }
                 }
             }
