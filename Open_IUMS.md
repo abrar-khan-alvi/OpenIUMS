@@ -4,7 +4,7 @@ OpenIUMS is an innovative Android application designed to revolutionize the mana
 
 ## Software Specifications:
 Android Version: 6.0 (Marshmallow) <br />
-Database: Firebase
+<br /> Database: Firebase
 
 
 ## Project Features:
