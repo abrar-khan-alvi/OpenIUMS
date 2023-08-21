@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".AdvisorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Spinner
+        android:id="@+id/advisor_course_dropdown"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello" />
+        android:layout_height="wrap_content"
+        android:hint="Select Course"
+        android:layout_marginBottom="16dp"/>
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/advisor_opinion_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your message"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/advisor_submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Midnight_Blue"
+        android:text="Submit"
+        android:textColor="@android:color/white"/>
+
+    <!-- Add a LinearLayout to display fetched data -->
+    <LinearLayout
+        android:id="@+id/data_display_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- TextViews for displaying course numbers and opinions will be added here -->
+    </LinearLayout>
+
+</LinearLayout>

@@ -2,11 +2,26 @@ package com.example.openiums2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +74,82 @@ public class TeacherEvlFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_teacher_evl, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_teacher_evl, container, false);
+
+        Spinner courseDropdown = rootView.findViewById(R.id.course_dropdown);
+        EditText opinionEditText = rootView.findViewById(R.id.opinion_edit_text);
+        Button submitButton = rootView.findViewById(R.id.submit_button);
+
+        DatabaseReference coursesRef = FirebaseDatabase.getInstance().getReference("courses")
+                .child(HelperClass.stringToPass); // Use the stored username to get data for that user
+
+        coursesRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<String> courseList = new ArrayList<>();
+
+                for (DataSnapshot courseSnapshot : dataSnapshot.getChildren()) {
+                    String courseNumber = courseSnapshot.child("courseNumber").getValue(String.class);
+
+                    // Debug log to check course number and key
+                    if (courseNumber != null) {
+                        courseList.add(courseNumber);
+                    } else {
+                        System.out.println("courseNumber is null for document: " + courseSnapshot.getKey());
+                    }
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, courseList);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                courseDropdown.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle the case where fetching data failed
+            }
+        });
+
+        submitButton.setOnClickListener(view -> {
+            String selectedCourse = courseDropdown.getSelectedItem().toString();
+            String opinion = opinionEditText.getText().toString();
+
+            if (!selectedCourse.isEmpty() && !opinion.isEmpty()) {
+                saveEvaluation(selectedCourse, opinion);
+
+                // Clear input fields and show a toast message
+                opinionEditText.getText().clear();
+                Toast.makeText(requireContext(),"Your Teachers evaluation for "+ selectedCourse+" is submitted", Toast.LENGTH_SHORT).show();
+
+                // Refresh the fragment (You can reload the current fragment)
+                FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+                ft.detach(this).attach(this).commit();
+            } else {
+                // Handle the case where input is empty
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return rootView;
+    }
+
+    private void saveEvaluation(String selectedCourse, String opinion) {
+        // Get the current user's ID (replace "user1" with the actual user's ID)
+        String userId = HelperClass.stringToPass;
+
+        // Get a reference to the "teachers" node and the specific course number node
+        DatabaseReference teachersRef = FirebaseDatabase.getInstance().getReference("teachers");
+        DatabaseReference courseRef = teachersRef.child(userId).child(selectedCourse);
+
+        // Save the evaluation opinion under the course number node
+        courseRef.setValue(opinion)
+                .addOnSuccessListener(aVoid -> {
+                    // Successful write to Firebase
+                    // Here you might want to show a success message to the user
+                })
+                .addOnFailureListener(e -> {
+                    // Failed to write to Firebase
+                    // Here you might want to show an error message to the user
+                });
     }
 }

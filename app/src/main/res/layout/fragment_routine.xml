@@ -32,5 +32,5 @@
         android:maxLines="100"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:hint="Loading course data..." />
+        android:hint="There is no course added" />
 </LinearLayout>
