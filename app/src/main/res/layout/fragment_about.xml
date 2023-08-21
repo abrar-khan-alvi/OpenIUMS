@@ -5,12 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutFragment">
-    <!-- TODO: Update blank fragment layout -->
+
+    <Spinner
+        android:id="@+id/about_course_dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
     <TextView
+        android:id="@+id/selected_value_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About Us Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:textColor="@color/lavender"/>
+        android:layout_below="@id/about_course_dropdown"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Selected Value: "
+        android:textSize="16sp" />
+
 </RelativeLayout>
