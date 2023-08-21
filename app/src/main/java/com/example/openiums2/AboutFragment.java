@@ -1,14 +1,12 @@
 package com.example.openiums2;
 
 import android.os.Bundle;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.text.Html;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -49,7 +47,7 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
 
-        Spinner courseDropdown = rootView.findViewById(R.id.about_course_dropdown);
+        Spinner resultDropdown = rootView.findViewById(R.id.about_course_dropdown);
         TextView selectedValueTextView = rootView.findViewById(R.id.selected_value_text_view);
 
         DatabaseReference coursesRef = FirebaseDatabase.getInstance().getReference("results")
@@ -67,18 +65,16 @@ public class AboutFragment extends Fragment {
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, semesterList);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                courseDropdown.setAdapter(adapter);
+                resultDropdown.setAdapter(adapter);
 
-                courseDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                resultDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                         String selectedSemester = adapterView.getItemAtPosition(position).toString();
                         Double gpaValue = dataSnapshot.child(selectedSemester).getValue(Double.class);
 
                         if (gpaValue != null) {
-                            String boldValue = "<b>" + gpaValue + "</b>";
-                            Spanned formattedValue = Html.fromHtml(selectedSemester+" GPA is:  " + boldValue);
-                            selectedValueTextView.setText(formattedValue);
+                            selectedValueTextView.setText(selectedSemester+" GPA is:  " + gpaValue);
                         } else {
                             selectedValueTextView.setText("Selected Value: N/A");
                         }
@@ -97,7 +93,7 @@ public class AboutFragment extends Fragment {
             }
         });
 
-        courseDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        resultDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 String selectedCourse = adapterView.getItemAtPosition(position).toString();
