@@ -1,12 +1,19 @@
 package com.example.openiums2;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +65,38 @@ public class PaymentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_payment, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_payment, container, false);
+
+        // Find the TextView in the layout
+        TextView paymentTextView = view.findViewById(R.id.paymentTextView);
+
+        DatabaseReference paymentsRef = FirebaseDatabase.getInstance().getReference("payments")
+                .child(HelperClass.stringToPass);
+
+        paymentsRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // Retrieve payment data
+                    int amount = dataSnapshot.child("duePayments").getValue(Integer.class);
+                    int totalCredits = dataSnapshot.child("totalCredits").getValue(Integer.class);
+
+                    // Update the TextView to display payment information
+                    String paymentInfo = amount+ "  BDT" + "\n"
+                            + "Total Credits: " + totalCredits;
+                    paymentTextView.setText(paymentInfo);
+                } else {
+                    // No payment data found
+                    paymentTextView.setText("No payment data available.");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle the error
+            }
+        });
+
+        return view;
+}
 }

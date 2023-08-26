@@ -1,64 +1,88 @@
 package com.example.openiums2;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MaterialFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class MaterialFragment extends Fragment {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import java.util.Arrays;
+import java.util.List;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class MaterialFragment extends Fragment implements MatAdapter.OnItemClickListener {
 
+    private List<String> courseNumbers;
+    private List<String> course_pdf;
+    private Context context;
     public MaterialFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MaterialFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MaterialFragment newInstance(String param1, String param2) {
-        MaterialFragment fragment = new MaterialFragment();
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_mat, container, false);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView2);
+
+        // Initialize courseNumbers and coursepdf using string arrays
+        courseNumbers = Arrays.asList(getResources().getStringArray(R.array.course_code));
+        course_pdf = Arrays.asList(getResources().getStringArray(R.array.course_pdf));
+
+        MatAdapter adapter = new MatAdapter(courseNumbers, course_pdf, this);
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        return rootView;
+    }
+
+    public void downloadFile(String downloadUrl, String fileName) {
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(downloadUrl));
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalPublicDir(
+                Environment.DIRECTORY_DOWNLOADS,
+                fileName);
+
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        downloadManager.enqueue(request);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        String selectedCourseNumber = courseNumbers.get(position);
+        String selectedCourseTitle = course_pdf.get(position);
+
+
+        // Create a new instance of the CourseDetailFragment and set the arguments
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+        args.putString("courseNumber", selectedCourseNumber);//https://aust.edu/lab_manuals/CSE/CSE1102-Lab%20Manual.pdf
+        args.putString("courseTitle", selectedCourseTitle);//https://aust.edu/lab_manuals/CSE/CSE1108-Lab%20Manual.pdf
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_material, container, false);
+        CourseDetailFragment courseDetailFragment = new CourseDetailFragment();
+        courseDetailFragment.setArguments(args);
+        String str1 = "https://aust.edu/lab_manuals/CSE/";
+        String str3 = "-Lab%20Manual.pdf";
+        String str2 = selectedCourseTitle;
+        String modifiedString = str2.substring(0, str2.length() - 4);
+        str2 = modifiedString;
+
+        String link = str1+str2+str3;
+        System.out.println(link);
+
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+        startActivity(intent);
+
     }
 }
