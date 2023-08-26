@@ -40,7 +40,7 @@
         android:layout_width="122dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_x="140dp"
+        android:layout_x="130dp"
         android:layout_y="480dp"
         android:backgroundTint="@color/Midnight_Blue"
         android:text="Sign In"
