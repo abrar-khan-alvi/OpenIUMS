@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Course Data -->
+    <string-array name="course_code">
+        <item>CSE1102</item>
+        <item>CSE1108</item>
+        <item>CSE1200</item>
+        <item>CSE1206</item>
+        <item>CSE2100</item>
+        <item>CSE2104</item>
+        <item>CSE2106</item>
+        <item>CSE2200</item>
+        <item>CSE2202</item>
+        <item>CSE2208</item>
+        <item>CSE2210</item>
+        <item>CSE2214</item>
+        <item>CSE3100</item>
+        <item>CSE3103</item>
+        <item>CSE3110</item>
+        <item>CSE3200</item>
+        <item>CSE3214</item>
+        <item>CSE3216</item>
+        <item>CSE4102</item>
+        <item>CSE4108</item>
+        <item>CSE4126</item>
+        <item>CSE4130</item>
+        <item>CSE4204</item>
+        <item>CSE4214</item>
+        <item>CSE4228</item>
+        <item>CSE4238</item>
+    </string-array>
+
+    <string-array name="course_pdf">
+        <item>CSE1102.pdf</item>
+        <item>CSE1108.pdf</item>
+        <item>CSE1200.pdf</item>
+        <item>CSE1206.pdf</item>
+        <item>CSE2100.pdf</item>
+        <item>CSE2104.pdf</item>
+        <item>CSE2106.pdf</item>
+        <item>CSE2200.pdf</item>
+        <item>CSE2202.pdf</item>
+        <item>CSE2208.pdf</item>
+        <item>CSE2210.pdf</item>
+        <item>CSE2214.pdf</item>
+        <item>CSE3100.pdf</item>
+        <item>CSE3103.pdf</item>
+        <item>CSE3110.pdf</item>
+        <item>CSE3200.pdf</item>
+        <item>CSE3214.pdf</item>
+        <item>CSE3216.pdf</item>
+        <item>CSE4102.pdf</item>
+        <item>CSE4108.pdf</item>
+        <item>CSE4126.pdf</item>
+        <item>CSE4130.pdf</item>
+        <item>CSE4204.pdf</item>
+        <item>CSE4214.pdf</item>
+        <item>CSE4228.pdf</item>
+        <item>CSE4238.pdf</item>
+    </string-array>
+
+</resources>

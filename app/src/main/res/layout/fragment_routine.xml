@@ -1,36 +1,306 @@
-<!-- fragment_routine.xml -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/grey"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <!-- Add this TextView for displaying total credits -->
-    <TextView
-        android:id="@+id/totalCreditsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:textColor="@android:color/black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="#DBF5F0" />
 
-    <!-- Other views or layout elements can be added here -->
-
-    <TextView
-        android:id="@+id/courseTextView"
+    <!--Top Header Layout-->
+    <LinearLayout
+        android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:background="@android:color/white"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:scrollbars="vertical"
-        android:maxLines="100"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:hint="There is no course added" />
-</LinearLayout>
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Courses"
+            android:textColor="#0C6170"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@+id/topbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp">
+
+            <!--Top Profile Section -->
+
+            <!--Option Bar-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/circularbordersolid"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightgrey" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightgrey" />
+
+            </LinearLayout>
+
+            <!--Bootom Cards with sections-->
+            <LinearLayout
+                android:id="@+id/personalinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--About Me Card-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circularbordersolid"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/circularbordersolid"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:paddingRight="8dp">
+
+                                    <TextView
+                                        android:id="@+id/courseTextView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/proximanovaregular"
+                                        android:text="Course Number :"
+                                        android:textColor="@color/goodgrey"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/studentid"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:fontFamily="@font/proximanovaregular"
+                                        android:text=""
+                                        android:textColor="@color/goodgrey"
+                                        android:textSize="15sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingRight="8dp">
+
+                                    <TextView
+                                        android:id="@+id/totalCreditsTextView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/proximanovaregular"
+                                        android:text="Credits : "
+                                        android:textColor="@color/goodgrey"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/dept"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:fontFamily="@font/proximanovaregular"
+                                        android:text=""
+                                        android:textColor="@color/goodgrey"
+                                        android:textSize="15sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingRight="8dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Space
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:paddingRight="8dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <Space
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Contact Details-->
+
+                <!--Skills Details-->
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!--Experience Bottom Cards-->
+            <LinearLayout
+                android:id="@+id/experience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!--Review Bottom Cards-->
+            <LinearLayout
+                android:id="@+id/review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

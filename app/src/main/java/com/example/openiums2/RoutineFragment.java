@@ -1,20 +1,23 @@
 package com.example.openiums2;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -96,6 +99,20 @@ public class RoutineFragment extends Fragment {
                         try {
                             int courseCredits = Integer.parseInt(course.getCredits());
                             totalCredits += courseCredits;
+                            int paymentAmount = totalCredits * 5000;
+
+                            // Display the payment amount
+                            //TextView paymentTextView = view.findViewById(R.id.paymentTextView);
+                            //paymentTextView.setText("Payment Amount: BDT " + paymentAmount);
+
+                            DatabaseReference paymentsRef = FirebaseDatabase.getInstance().getReference("payments")
+                                    .child(HelperClass.stringToPass);
+
+                            Map<String, Object> paymentData = new HashMap<>();
+                            paymentData.put("duePayments", paymentAmount);
+                            paymentData.put("totalCredits", totalCredits);
+
+                            paymentsRef.setValue(paymentData);
                         } catch (NumberFormatException e) {
                             // Handle the case where credit value is not a valid integer
                             // You might want to log or display an error message
